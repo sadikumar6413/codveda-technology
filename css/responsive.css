@@ -1,0 +1,238 @@
+@media (min-width: 1440px) {
+    .container {
+        max-width: 1320px;
+    }
+}
+
+@media (max-width: 1024px) {
+    .services-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .footer-grid {
+        grid-template-columns: 1fr 1fr;
+        gap: 40px;
+    }
+
+    .footer-brand {
+        grid-column: 1 / -1;
+    }
+}
+
+@media (max-width: 768px) {
+    :root {
+        --navbar-height: 64px;
+    }
+
+    .section-header {
+        margin-bottom: 48px;
+    }
+
+    .nav-toggle {
+        display: flex;
+    }
+
+    .navbar-nav {
+        position: fixed;
+        top: 0;
+        right: -100%;
+        width: min(320px, 85vw);
+        height: 100vh;
+        height: 100dvh;
+        flex-direction: column;
+        align-items: stretch;
+        background: var(--bg-white);
+        box-shadow: -4px 0 24px rgba(0, 0, 0, 0.1);
+        padding: calc(var(--navbar-height) + 24px) 24px 32px;
+        gap: 16px;
+        transition: right 0.4s ease;
+        z-index: 1000;
+        overflow-y: auto;
+    }
+
+    .navbar-nav.open {
+        right: 0;
+    }
+
+    .navbar-list {
+        flex-direction: column;
+        gap: 0;
+    }
+
+    .nav-link {
+        display: block;
+        padding: 14px 16px;
+        font-size: 1rem;
+    }
+
+    .navbar-cta {
+        margin-left: 0;
+        margin-top: 8px;
+        text-align: center;
+    }
+
+    .nav-toggle.active span:nth-child(1) {
+        transform: translateY(7px) rotate(45deg);
+    }
+
+    .nav-toggle.active span:nth-child(2) {
+        opacity: 0;
+    }
+
+    .nav-toggle.active span:nth-child(3) {
+        transform: translateY(-7px) rotate(-45deg);
+    }
+
+    .hero {
+        min-height: auto;
+        padding: calc(var(--navbar-height) + 48px) 0 60px;
+        text-align: center;
+    }
+
+    .hero-desc {
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .hero-buttons {
+        justify-content: center;
+    }
+
+    .about-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+
+    .about-card {
+        padding: 32px 24px;
+    }
+
+    .services-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+
+    .why-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+
+    .why-card {
+        padding: 32px 28px;
+    }
+
+    .stats-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 40px 24px;
+    }
+
+    .cta-box {
+        padding: 56px 32px;
+    }
+
+    .contact-grid {
+        grid-template-columns: 1fr;
+        gap: 40px;
+    }
+
+    .contact-form {
+        padding: 28px 24px;
+    }
+
+    .form-row {
+        grid-template-columns: 1fr;
+        gap: 0;
+    }
+
+    .footer-grid {
+        grid-template-columns: 1fr 1fr;
+        gap: 32px;
+    }
+
+    .footer-brand {
+        grid-column: 1 / -1;
+    }
+}
+
+@media (max-width: 425px) {
+    .container {
+        padding: 0 16px;
+    }
+
+    .hero-title {
+        font-size: 2.25rem;
+    }
+
+    .section-title {
+        font-size: 1.625rem;
+    }
+
+    .section-text {
+        font-size: 0.9375rem;
+    }
+
+    .hero-buttons {
+        flex-direction: column;
+        width: 100%;
+    }
+
+    .hero-buttons .btn {
+        width: 100%;
+    }
+
+    .btn-lg {
+        padding: 14px 28px;
+        font-size: 0.9375rem;
+    }
+
+    .stats-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 32px 16px;
+    }
+
+    .cta-box {
+        padding: 48px 20px;
+    }
+
+    .cta-buttons {
+        flex-direction: column;
+        width: 100%;
+    }
+
+    .cta-buttons .btn {
+        width: 100%;
+    }
+
+    .footer-grid {
+        grid-template-columns: 1fr;
+        gap: 28px;
+    }
+
+    .back-to-top {
+        bottom: 20px;
+        right: 20px;
+        width: 42px;
+        height: 42px;
+    }
+}
+
+@media (max-width: 375px) {
+    .hero-title {
+        font-size: 2rem;
+    }
+}
+
+.nav-overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.4);
+    z-index: 999;
+    opacity: 0;
+    visibility: hidden;
+    transition: all var(--transition);
+}
+
+.nav-overlay.visible {
+    opacity: 1;
+    visibility: visible;
+}
