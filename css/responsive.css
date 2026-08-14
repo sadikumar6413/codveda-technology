@@ -5,17 +5,40 @@
 }
 
 @media (max-width: 1024px) {
-    .services-grid {
+    .hero__inner {
+        gap: 40px;
+    }
+
+    .hero__illustration {
+        width: 360px;
+        height: 360px;
+    }
+
+    .services__grid {
         grid-template-columns: repeat(2, 1fr);
     }
 
-    .footer-grid {
+    .testimonials__grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .testimonials__grid .testimonial-card:last-child {
+        grid-column: 1 / -1;
+        max-width: 480px;
+        margin: 0 auto;
+    }
+
+    .footer__grid {
         grid-template-columns: 1fr 1fr;
         gap: 40px;
     }
 
-    .footer-brand {
+    .footer__brand {
         grid-column: 1 / -1;
+    }
+
+    .footer__brand-text {
+        max-width: 100%;
     }
 }
 
@@ -28,11 +51,11 @@
         margin-bottom: 48px;
     }
 
-    .nav-toggle {
+    .navbar__toggle {
         display: flex;
     }
 
-    .navbar-nav {
+    .navbar__nav {
         position: fixed;
         top: 0;
         right: -100%;
@@ -41,45 +64,55 @@
         height: 100dvh;
         flex-direction: column;
         align-items: stretch;
-        background: var(--bg-white);
+        background: var(--color-white);
         box-shadow: -4px 0 24px rgba(0, 0, 0, 0.1);
         padding: calc(var(--navbar-height) + 24px) 24px 32px;
         gap: 16px;
-        transition: right 0.4s ease;
+        transition: right var(--transition-slow);
         z-index: 1000;
         overflow-y: auto;
     }
 
-    .navbar-nav.open {
+    body.dark-mode .navbar__nav {
+        background: #262626;
+    }
+
+    .navbar__nav.open {
         right: 0;
     }
 
-    .navbar-list {
+    .navbar__list {
         flex-direction: column;
         gap: 0;
     }
 
-    .nav-link {
+    .navbar__link {
         display: block;
         padding: 14px 16px;
         font-size: 1rem;
+        border-radius: var(--radius-md);
     }
 
-    .navbar-cta {
+    .navbar__cta {
         margin-left: 0;
         margin-top: 8px;
         text-align: center;
     }
 
-    .nav-toggle.active span:nth-child(1) {
+    .navbar__nav .theme-toggle {
+        align-self: flex-start;
+        margin-top: 8px;
+    }
+
+    .navbar__toggle.active .navbar__toggle-bar:nth-child(1) {
         transform: translateY(7px) rotate(45deg);
     }
 
-    .nav-toggle.active span:nth-child(2) {
+    .navbar__toggle.active .navbar__toggle-bar:nth-child(2) {
         opacity: 0;
     }
 
-    .nav-toggle.active span:nth-child(3) {
+    .navbar__toggle.active .navbar__toggle-bar:nth-child(3) {
         transform: translateY(-7px) rotate(-45deg);
     }
 
@@ -89,67 +122,114 @@
         text-align: center;
     }
 
-    .hero-desc {
+    .hero__inner {
+        grid-template-columns: 1fr;
+        gap: 48px;
+    }
+
+    .hero__description {
         margin-left: auto;
         margin-right: auto;
     }
 
-    .hero-buttons {
+    .hero__actions {
         justify-content: center;
     }
 
-    .about-grid {
+    .hero__illustration {
+        width: 300px;
+        height: 300px;
+    }
+
+    .hero__illus-orb {
+        width: 120px;
+        height: 120px;
+    }
+
+    .hero__illus-ring {
+        width: 200px;
+        height: 200px;
+    }
+
+    .hero__illus-card {
+        padding: 10px 16px;
+    }
+
+    .hero__illus-card span {
+        font-size: 0.8125rem;
+    }
+
+    .hero__illus-icon {
+        width: 34px;
+        height: 34px;
+    }
+
+    .hero__illus-icon svg {
+        width: 18px;
+        height: 18px;
+    }
+
+    .about__grid {
         grid-template-columns: 1fr;
         gap: 20px;
     }
 
-    .about-card {
+    .about__card {
         padding: 32px 24px;
     }
 
-    .services-grid {
+    .services__grid {
         grid-template-columns: 1fr;
         gap: 20px;
     }
 
-    .why-grid {
+    .why__grid {
         grid-template-columns: 1fr;
         gap: 20px;
     }
 
-    .why-card {
+    .why__card {
         padding: 32px 28px;
     }
 
-    .stats-grid {
+    .stats__grid {
         grid-template-columns: repeat(2, 1fr);
         gap: 40px 24px;
     }
 
-    .cta-box {
+    .testimonials__grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+
+    .testimonials__grid .testimonial-card:last-child {
+        max-width: 100%;
+    }
+
+    .cta__inner {
         padding: 56px 32px;
     }
 
-    .contact-grid {
+    .contact__grid {
         grid-template-columns: 1fr;
         gap: 40px;
     }
 
-    .contact-form {
+    .contact__form {
         padding: 28px 24px;
     }
 
-    .form-row {
+    .form__row {
         grid-template-columns: 1fr;
         gap: 0;
     }
 
-    .footer-grid {
+    .footer__grid {
         grid-template-columns: 1fr 1fr;
         gap: 32px;
     }
 
-    .footer-brand {
+    .footer__brand {
         grid-column: 1 / -1;
     }
 }
@@ -159,51 +239,94 @@
         padding: 0 16px;
     }
 
-    .hero-title {
+    .navbar .container {
+        padding: 0 16px;
+    }
+
+    .hero__title {
         font-size: 2.25rem;
+    }
+
+    .hero__badge {
+        font-size: 0.75rem;
+        padding: 6px 14px;
+    }
+
+    .hero__description {
+        font-size: 1rem;
+    }
+
+    .hero__actions {
+        flex-direction: column;
+        width: 100%;
+    }
+
+    .hero__actions .btn {
+        width: 100%;
+    }
+
+    .hero__illustration {
+        width: 260px;
+        height: 260px;
+    }
+
+    .hero__illus-orb {
+        width: 100px;
+        height: 100px;
+    }
+
+    .hero__illus-ring {
+        width: 170px;
+        height: 170px;
+    }
+
+    .hero__illus-card--1 {
+        top: 10px;
+        right: -10px;
+    }
+
+    .hero__illus-card--2 {
+        bottom: 70px;
+        left: -20px;
+    }
+
+    .hero__illus-card--3 {
+        bottom: -10px;
+        right: 10px;
+    }
+
+    .btn--lg {
+        padding: 14px 28px;
+        font-size: 0.9375rem;
     }
 
     .section-title {
         font-size: 1.625rem;
     }
 
-    .section-text {
+    .section-subtitle {
         font-size: 0.9375rem;
     }
 
-    .hero-buttons {
-        flex-direction: column;
-        width: 100%;
-    }
-
-    .hero-buttons .btn {
-        width: 100%;
-    }
-
-    .btn-lg {
-        padding: 14px 28px;
-        font-size: 0.9375rem;
-    }
-
-    .stats-grid {
+    .stats__grid {
         grid-template-columns: repeat(2, 1fr);
         gap: 32px 16px;
     }
 
-    .cta-box {
+    .cta__inner {
         padding: 48px 20px;
     }
 
-    .cta-buttons {
+    .cta__actions {
         flex-direction: column;
         width: 100%;
     }
 
-    .cta-buttons .btn {
+    .cta__actions .btn {
         width: 100%;
     }
 
-    .footer-grid {
+    .footer__grid {
         grid-template-columns: 1fr;
         gap: 28px;
     }
@@ -217,8 +340,69 @@
 }
 
 @media (max-width: 375px) {
-    .hero-title {
+    .hero__title {
         font-size: 2rem;
+    }
+
+    .hero__illustration {
+        width: 220px;
+        height: 220px;
+    }
+
+    .hero__illus-orb {
+        width: 80px;
+        height: 80px;
+    }
+
+    .hero__illus-ring {
+        width: 140px;
+        height: 140px;
+    }
+
+    .hero__illus-card {
+        padding: 8px 12px;
+        border-radius: var(--radius-md);
+    }
+
+    .hero__illus-card span {
+        font-size: 0.75rem;
+    }
+
+    .hero__illus-icon {
+        width: 28px;
+        height: 28px;
+    }
+
+    .hero__illus-icon svg {
+        width: 14px;
+        height: 14px;
+    }
+}
+
+@media (max-width: 320px) {
+    .hero__title {
+        font-size: 1.75rem;
+    }
+
+    .hero__illustration {
+        width: 200px;
+        height: 200px;
+    }
+
+    .hero__illus-card--2,
+    .hero__illus-card--3 {
+        display: none;
+    }
+
+    .about__card,
+    .service-card,
+    .why__card,
+    .testimonial-card {
+        padding: 24px 20px;
+    }
+
+    .cta__inner {
+        padding: 40px 16px;
     }
 }
 
@@ -229,10 +413,30 @@
     z-index: 999;
     opacity: 0;
     visibility: hidden;
-    transition: all var(--transition);
+    transition: all var(--transition-base);
 }
 
 .nav-overlay.visible {
     opacity: 1;
     visibility: visible;
+}
+
+@media print {
+    .navbar,
+    .back-to-top,
+    .hero__visual,
+    .cta {
+        display: none;
+    }
+
+    body {
+        font-size: 12pt;
+        color: #000;
+        background: #fff;
+    }
+
+    .reveal {
+        opacity: 1;
+        transform: none;
+    }
 }
